@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+
+            <category android:name="android.intent.category.BROWSABLE" />
+
+            <data android:scheme="https" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.StoryAppIrfanMaiyolaIntermedietSubb2">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDAzCw1MtzilzDp4pcYdYFZUwV9AE-HCyQ" />
+
+        <activity
+            android:name="com.dicoding.appstoryirfanmaiyolaintermedietsubb2.ViewModel.viewMaps.Maps"
+            android:exported="false"
+            android:label="@string/title_activity_maps" />
+        <activity
+            android:name="com.dicoding.appstoryirfanmaiyolaintermedietsubb2.ViewModel.viewadd.Add_Story"
+            android:exported="false" />
+        <activity
+            android:name="com.dicoding.appstoryirfanmaiyolaintermedietsubb2.ViewModel.viewMain.DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.dicoding.appstoryirfanmaiyolaintermedietsubb2.ViewModel.viewMain.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.dicoding.appstoryirfanmaiyolaintermedietsubb2.ViewModel.viewWelcome.Welcome_Activity"
+            android:exported="false" />
+        <activity
+            android:name="com.dicoding.appstoryirfanmaiyolaintermedietsubb2.register.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.dicoding.appstoryirfanmaiyolaintermedietsubb2.ViewModel.viewLogin.Login_Activity"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.bluelaned.storyapp2"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/path_file" />
+        </provider>
+
+        <!-- suppress AndroidDomInspection -->
+        <service
+            android:name="com.google.android.gms.metadata.ModuleDependencies"
+            android:enabled="false"
+            android:exported="false"
+            tools:ignore="MissingClass">
+            <intent-filter>
+                <action android:name="com.google.android.gms.metadata.MODULE_DEPENDENCIES" />
+            </intent-filter>
+
+            <meta-data
+                android:name="photopicker_activity:0:required"
+                android:value="" />
+        </service>
+    </application>
+
+</manifest>
